@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Mouse-events</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box{
+            padding: 50px 0;
+            width:120px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+        .books{
+            display: flex;
+        }
+        .fav{
+            background: skyblue;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>{{msg}}</h1>
+
+        <!-- mouse events -->
+        <p style="background-color: lawngreen;" >mouse evnts</p>
+        <br>
+        <div @mouseover="handleEvent($event,100)" class="box">mouse over</div>
+        <div @mouseleave="handleEvent" class="box">mouse leave</div>
+        <div @dblclick="handleEvent" class="box">double click</div> 
+        <div @mousemove="handlemousemove" class="box">position {{x}} - {{y}}</div> 
+
+        <!-- Data iteration with for loop -->
+        <!-- Attr binding while iterating data -->
+        <p style="background-color: lawngreen;" >Data iteration with for loop</p>
+        <div v-if="showBook" class="books">
+                <h3 style="margin: 0 15px;"  v-for="book in filterBooks" :class="{fav:!book.isFav}" @click="toggleFavBook(book)" >
+                    <img :src="book.img" style="width: 80px;" alt="">
+                    <p>{{book.title}}</p> <p>{{book.author}}</p>
+                </h3>
+        </div>
+        <button @click="handleClick">Toogle book</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
