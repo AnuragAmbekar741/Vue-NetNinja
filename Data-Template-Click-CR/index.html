@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=H1, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Vue</h1>
+    <div id="app">
+        <p style="background-color: lawngreen;">Template,Data & onclick event</p>
+        <p>{{title}} - {{author}} - {{age}}</p>
+        <button v-on:click="age++">++</button>
+        <button v-on:click="age--">--</button>
+        <button @click="title='Half blood prince'">Change title</button>
+        <button @click="changeTitle('Deadly hollows')">Change title</button>
+        
+        <p style="background-color: lawngreen;" >Condition rendering</p>
+        <div v-if="showBook">
+            <p>{{title}} - {{author}} - {{age}}</p>
+            <button v-on:click="age++">++</button>
+            <button v-on:click="age--">--</button>
+            <button @click="title='Half blood prince'">Change title</button>
+            <button @click="changeTitle('Deadly hollows')">Change title</button>
+        </div>
+        <span v-show="showBook">v-if will completely take ele out of dom but v-show hides it using css</span>
+        <br>
+        <button @click="toggleShow">
+            <span v-if="showBook" >Hide Book</span>
+            <span v-else>Show Book</span>
+            <!-- <span v-if="!showBook" >Show Book </span> -->
+        </button>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
