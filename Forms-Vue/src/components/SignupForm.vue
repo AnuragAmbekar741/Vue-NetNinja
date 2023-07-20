@@ -1,6 +1,6 @@
 <template>
     <div>
-    <form>
+    <form @submit.prevent="handleSubmit">
         <label>Email</label>
         <input type="email" required v-model="email" />
         <label>Password</label>
@@ -12,7 +12,7 @@
             <option>Designer</option>
         </select>
         <label>Skills</label>
-        <input type="type" required @keyup="addSkills" v-model="skill" />
+        <input type="type" @keyup="addSkills" v-model="skill" />
         <div @click="removeSkill(ele)" class="pill" v-for="ele in skills">
             {{ele}}
         </div>
@@ -62,6 +62,11 @@ export default {
         },
         removeSkill(tempSkill){
             this.skills = this.skills.filter(skill=>skill!=tempSkill)
+        },
+        handleSubmit(){
+            if(this.tnc){
+                console.log(this.email,this.password,this.role,this.skills)
+            }
         }   
     }
 };
