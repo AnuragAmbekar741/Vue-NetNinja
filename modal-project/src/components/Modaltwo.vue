@@ -1,15 +1,9 @@
 <template>
-    <!-- <div class="backdrop" @click.self="closeModal">
-        <div class="modal" :class="{sale:theme==='sale'}">
-            <h1>{{header}}</h1>
-            <p>{{text}}</p>
-        </div>
-    </div> -->
-    <div class="backdrop" @click.self="closeModal">
-        <div class="modal" :class="{sale:theme==='sale'}">
-            <slot>If content not passed - Default content</slot>
-            <div class="actions">
-                <slot name="links"></slot>
+    <div @click.self='closeModal' class="backdrop">
+        <div class="modal">
+            <slot></slot>
+            <div class="userForm">
+                    <slot name="inputs"></slot>
             </div>
         </div>
     </div>
@@ -17,10 +11,9 @@
 
 <script>
 export default {
-    props:['header','text','theme'],
     methods:{
         closeModal(){
-            this.$emit('close')
+            this.$emit('close2')
         }
     }
 }
