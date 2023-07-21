@@ -1,0 +1,96 @@
+<script setup>
+</script>
+
+<template>
+  <div>
+    <header>
+      <div class="wrapper">
+        <nav>
+          <button @click="back">Back</button>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink :to="{name:'about'}">About</RouterLink>
+          <RouterLink :to="{name:'books'}">Jobs</RouterLink>
+          <button @click="forward">Forward</button>
+        </nav>
+      </div>
+    </header>
+    <RouterView />
+  </div>
+</template>
+
+<script>
+  export default{
+    methods:{
+      forward(){
+        this.$router.go(1)
+      },
+      back(){
+        this.$router.go(-1)
+      }
+    }
+  }
+</script>
+
+<style scoped>
+header {
+  line-height: 1.5;
+  max-height: 100vh;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+nav {
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+nav a.router-link-exact-active {
+  color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    text-align: left;
+    margin-left: -1rem;
+    font-size: 1rem;
+    display: flex;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+}
+</style>
