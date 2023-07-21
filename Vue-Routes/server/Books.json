@@ -1,0 +1,84 @@
+{
+    "books": [
+        {
+          "id": 101,
+          "title": "The Great Gatsby",
+          "author": "F. Scott Fitzgerald",
+          "genre": "Fiction",
+          "published_year": 1925,
+          "img": "https://example.com/book_covers/the_great_gatsby.jpg"
+        },
+        {
+          "id": 102,
+          "title": "To Kill a Mockingbird",
+          "author": "Harper Lee",
+          "genre": "Fiction",
+          "published_year": 1960,
+          "img": "https://example.com/book_covers/to_kill_a_mockingbird.jpg"
+        },
+        {
+          "id": 103,
+          "title": "1984",
+          "author": "George Orwell",
+          "genre": "Fiction",
+          "published_year": 1949,
+          "img": "https://example.com/book_covers/1984.jpg"
+        },
+        {
+          "id": 104,
+          "title": "The Lord of the Rings",
+          "author": "J.R.R. Tolkien",
+          "genre": "Fantasy",
+          "published_year": 1954,
+          "img": "https://example.com/book_covers/lotr.jpg"
+        },
+        {
+          "id": 105,
+          "title": "Pride and Prejudice",
+          "author": "Jane Austen",
+          "genre": "Romance",
+          "published_year": 1813,
+          "img": "https://example.com/book_covers/pride_and_prejudice.jpg"
+        },
+        {
+          "id": 106,
+          "title": "Harry Potter and the Sorcerer's Stone",
+          "author": "J.K. Rowling",
+          "genre": "Fantasy",
+          "published_year": 1997,
+          "img": "https://example.com/book_covers/harry_potter_sorcerers_stone.jpg"
+        },
+        {
+          "id": 107,
+          "title": "The Catcher in the Rye",
+          "author": "J.D. Salinger",
+          "genre": "Fiction",
+          "published_year": 1951,
+          "img": "https://example.com/book_covers/the_catcher_in_the_rye.jpg"
+        },
+        {
+          "id": 108,
+          "title": "The Hobbit",
+          "author": "J.R.R. Tolkien",
+          "genre": "Fantasy",
+          "published_year": 1937,
+          "img": "https://example.com/book_covers/the_hobbit.jpg"
+        },
+        {
+          "id": 109,
+          "title": "Moby-Dick",
+          "author": "Herman Melville",
+          "genre": "Fiction",
+          "published_year": 1851,
+          "img": "https://example.com/book_covers/moby_dick.jpg"
+        },
+        {
+          "id": 110,
+          "title": "Brave New World",
+          "author": "Aldous Huxley",
+          "genre": "Science Fiction",
+          "published_year": 1932,
+          "img": "https://example.com/book_covers/brave_new_world.jpg"
+        }
+      ]
+}

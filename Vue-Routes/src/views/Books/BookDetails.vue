@@ -1,21 +1,36 @@
 <template>
     <div>
-    <h1>Book details page</h1>
-    <h1>Book id is {{id}}</h1>
+    <div v-if="book" class="book">
+        <h2>Name : {{book.title}}</h2>
+        <h2>Genre : {{book.genre}}</h2>
+        <h2>Published year : {{book.published_year}}</h2>
+        <h2>Author : {{book.author}}</h2>
+    </div>
     </div>
 </template>
 
 <script>
 export default {
-    props:['id','book'],
-    // data(){
-    //     return{
-    //         id:this.$route.params.id
-    //     }
-    // }
+    props:['id'],
+    data(){
+        return{
+            book:null
+        }
+    },
+    mounted(){
+        fetch("http://localhost:3000/books/"+this.id)
+        .then((res)=>res.json())
+        .then((data)=>{
+        this.book = data
+        })
+        .catch(err=>console.log(err.message))
+    }
 }
 </script>
 
-<style>
-
+<style scoped>
+    .book{
+        margin: 40px;
+        padding: 1rem;
+    }
 </style>
