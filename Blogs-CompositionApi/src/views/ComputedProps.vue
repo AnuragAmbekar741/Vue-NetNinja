@@ -6,14 +6,17 @@
     <div class="names">
         <div v-for="name in filteredNames" class="name">
             {{name}}
-        </div>
+        </div>        
     </div>
+        <PassingProps :names="names"/>
   </div>
 </template>
 
 <script>
 import {ref, computed,watch,watchEffect} from 'vue'
+import PassingProps from '../components/PassingProps.vue'
 export default {
+  components: { PassingProps },
     setup(){
         const names = ref(['Itachi','Kakashi','Madara','Tobirama','Naruto','Obito','Saske','Tsunade','Gai Sensai','Gara'])
         const search = ref('')
