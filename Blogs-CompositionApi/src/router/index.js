@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import RefVsReactive from '../views/RefVsReactive.vue'
 import ComputedProps from '../views/ComputedProps.vue'
+// import DataView from '../views/DataView.vue'
+import FetchinData from '../components/FetchinData.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +16,11 @@ const router = createRouter({
       path: '/names',
       name: 'names',
       component: ComputedProps
+    },
+    {
+      path: '/data',
+      name: 'data',
+      component: FetchinData
     }
   ]
 })
